@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -20,5 +21,6 @@ const IndexPage = () => (
     <Link to="/contact/">Go to Contact</Link>
   </Layout>
 )
+
 
 export default IndexPage

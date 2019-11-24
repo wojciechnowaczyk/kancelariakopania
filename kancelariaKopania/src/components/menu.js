@@ -44,6 +44,7 @@ const Line = styled.li`
 const LinkStyles = {
   color: 'black',
   textDecoration: 'none',
+  fontFamily: "Cinzel",
 }
 
 export default Menu

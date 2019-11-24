@@ -23,7 +23,7 @@ const Contact = () => (
     <Menu />
     <MainBody>
       <SubTitle>
-        Dane Teleadresowe
+        Dane teleadresowe
       </SubTitle>
       <ContactInfo>
       Kancelaria Radcy Prawnego Joanna Kopania
@@ -63,7 +63,7 @@ const Header = styled.div`
 const HeaderOpacity = styled.div`
   width: 70%;
   height: 50%;
-  background: rgba(134, 89, 45, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,6 +96,7 @@ const Map = styled.iframe`
   height: 500px;
   border:0;
   frameborder: 0;
+  }
 `
 
 export default Contact

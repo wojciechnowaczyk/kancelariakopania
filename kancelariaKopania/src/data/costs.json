@@ -1,0 +1,28 @@
+{
+  "data": [
+  {
+    "question" : "1. wynagrodzenie za ustną poradę prawną",
+    "answer" : "Stała opłata w wysokości 200 zł. W przypadku zlecenia prowadzenia sprawy, koszt porady prawej zalicza się na poczet wynagrodzenia za prowadzenie sprawy. Porada prawna może być udzielona osobiście, poprzez e-mail, rozmowę telefoniczną lub telekonferencję."
+  },
+  {
+    "question" : "2. wynagrodzenie godzinowe",
+    "answer" : "Stawka wynagrodzenia godzinowego jest ustalana z klientem na początku współpracy a wysokość wynagrodzenia zależna od ilości godzin poświęconych na dane zlecenie."
+  },
+  {
+    "question" : "3. wynagrodzenie ryczałtowe",
+    "answer" : "Stawka wynagrodzenia określona jest na początku współpracy; pozostaje niezmienna i niezależna od czasu, jaki został poświęcony na dane zlecenie. Najczęściej stosowane w przypadku przygotowania pism w postępowaniu sądowym (od 300 zł), umów, w tym ich opiniowaniu (w zależności od stopnia skomplikowania i wielkości umowy – od 300 zł), opinii prawnych (od 500 zł), rejestracji spółek w KRS (od 1.000 zł)."
+  },
+  {
+    "question" : "4. wynagrodzenie abonamentowe",
+    "answer" : "Stała wysokość okresowego wynagrodzenia za z góry określoną liczbę godzin w danym okresie rozliczeniowym. Model stosowany najczęściej przez podmioty, u których zapotrzebowania na pomoc prawną występuje w bieżącej działalności. Kancelaria w swojej ofercie posiada abonamenty miesięcznie już od 200 zł netto, które są idealne dla niewielkich przedsiębiorców, którzy w ten sposób mogą zapewnić sobie stałą obsługę prawną, za stosunkowo niewielki pieniądze."
+  },
+  {
+    "question" : "5. wynagrodzenie w sporach sądowych",
+    "answer" : "Wynagrodzenie uzależnione od stopnia skomplikowania sprawy oraz wysokości dochodzonego roszczenia (jeśli z takim mamy do czynienia). Ustalane zawsze na początku współpracy. Kancelaria w tym zakresie stosuje dwa warianty: - wynagrodzenie w formie ryczałtu płatne przy podjęciu sprawy, - wynagrodzenie składające się z opłaty wstępnej (niższej, niż przy ryczałcie) i premii od sukcesu (tzw. success fee) stanowiącej ustalony z Klientem procent od uzyskanego dla niego świadczenia."
+  },
+  {
+    "question" : "6. wynagrodzenie w sprawach windykacyjnych",
+    "answer" : "Wynagrodzenie stosowane w stosunkowo prostych sprawach o zapłatę oraz o odszkodowanie. Kancelaria stosuje tu dwa warianty: - wynagrodzenie w formie ryczałtu płatne przy podjęciu sprawy, którego wysokość oparta jest na stawkach zastępstwa procesowego wynikających z rozporządzenia Ministra Sprawiedliwości, - wynagrodzenie składające się z opłaty wstępnej (możliwość podjęcia sprawy za wynagrodzenie w wysokości już od 100 zł) i premii od sukcesu (tzw. success fee) stanowiącej ustalony z Klientem procent od uzyskanego dla niego świadczenia. Zapraszamy do współpracy!"
+  }
+]
+}

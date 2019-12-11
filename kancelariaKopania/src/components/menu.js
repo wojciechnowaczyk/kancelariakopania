@@ -7,16 +7,16 @@ const Menu = () => {
   <Box>
     <MenuList>
       <Line>
-        <Link to="/" style={LinkStyles}> O kancelarii </Link>
+        <Link to="/#content" style={LinkStyles} activeStyle={ActiveStyles}> O kancelarii </Link>
       </Line>
       <Line>
-        <Link to="/services/" style={LinkStyles}> Usługi </Link>
+        <Link to="/services/" style={LinkStyles} activeStyle={ActiveStyles}> Usługi </Link>
       </Line>
       <Line>
-        <Link to="/costs/" style={LinkStyles}> Wynagrodzenie </Link>
+        <Link to="/costs/" style={LinkStyles} activeStyle={ActiveStyles}> Wynagrodzenie </Link>
       </Line>
       <Line>
-        <Link to="/contact/" style={LinkStyles}> Kontakt </Link>
+        <Link to="/contact/" style={LinkStyles} activeStyle={ActiveStyles}> Kontakt </Link>
       </Line>
     </MenuList>
   </Box>
@@ -37,14 +37,22 @@ const MenuList = styled.ul`
   margin: 0px;
 `
 const Line = styled.li`
-  color: rgb(134, 89, 45);
   margin-top: calc(1.45rem / 2);
+  &:hover{
+    cursor: pointer;
+  }
+
 `
 
 const LinkStyles = {
   color: 'black',
   textDecoration: 'none',
   fontFamily: "Cinzel",
+  fontSize: '16px',
+}
+
+const ActiveStyles = {
+  borderBottom: 'solid #48689A 2px',
 }
 
 export default Menu

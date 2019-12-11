@@ -8,21 +8,28 @@ import SEO from "../components/seo"
 import PropTypes from "prop-types"
 
 import Menu from "../components/menu"
+import Footer from "../components/footer"
 
-import books from "../images/books.jpg"
+import books from "../images/books1.jpg"
+import services from "../data/services.json"
 
 class Services extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {showService: false };
+    this.state = {showService: false, status: [] };
     this.toggleBox = this.toggleBox.bind(this);
   }
   toggleBox() {
-  const { showService } = this.state;
-  this.setState({
-    showService: !showService,
-  });
-}
+    const { showService } = this.state;
+    this.setState({
+      showService: !showService,
+    });
+  }
+
+  handleClick = (index, visibility) => {
+    console.log('test');
+    console.log(visibility);
+  }
   render(){
     return(
       <>
@@ -36,30 +43,14 @@ class Services extends React.Component {
         </Header>
         <Menu />
         <MainBody>
-          <ServiceBox onClick={this.state.toggleBox}>
-            <ServiceTitle>
-              Zakładanie i obsługa prawna spółek, KRS
-            </ServiceTitle>
-            {this.state.showService === true && <ServiceBody>
-            Prowadzenie każdej firmy wymaga rzetelnej, profesjonalnej i skutecznej obsługi prawnej. Kompleksowo dbamy o kwestie prawne Państwa firmy, dlatego:
-            <ul>
-              <li>Doradzamy przy założeniu spółki</li>
-              <li>Kompletujemy wymagane dokumenty </li>
-              <li>Przeprowadzamy rejestrację spółek oraz dokonujemy późniejszych zmian w KRS</li>
-              <li>Przeprowadzamy audyt prawny (badanie spółek)</li>
-              <li>Reprezentujemy w postępowaniach w sprawie nieważności uchwał</li>
-              <li>Prowadzimy sprawy korporacyjne – w tym przygotowywanie dokumentacji na Zgromadzenia Wspólników oraz posiedzenia Zarządu</li>
-              <li>Opracowujemy projekty uchwał</li>
-              <li>Świadczymy kompleksową pomoc w łączeniu bądź podziale spółek</li>
-              <li>Sporządzamy umowy handlowe i pracownicze</li>
-              <li>Reprezentujemy spółki przed sądami</li>
-              <li>Wszczynamy oraz monitorujemy przebieg postępowania egzekucyjnego i zabezpieczającego</li>
-              <li>Prowadzimy windykację należności</li>
-              <li>Podejmujemy działania zmierzające do ochrony przed nieuczciwą konkurencją</li>
-            </ul>
-            </ServiceBody>}
-          </ServiceBox>
+          {services.data.map((el, i) =>
+            <div key={i}>
+              <QuestionBar visible='1' onClick={(visible)=> this.handleClick(i, visible)}> {el.question} </QuestionBar>
+              <AnswerBox> {el.answer.split('\n')} </AnswerBox>
+            </div>
+          )}
         </MainBody>
+        <Footer />
       </>
   )}
   }
@@ -77,7 +68,7 @@ const Header = styled.div`
 const HeaderOpacity = styled.div`
   width: 70%;
   height: 50%;
-  background: rgba(134, 89, 45, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,14 +76,18 @@ const HeaderOpacity = styled.div`
 
 const HeaderTitle = styled.h1`
   color: white;
-  font-size: 40px;
+  font-size: 60px;
 `
 
 const MainBody = styled.div`
-  width: 70%;
-  margin-left: 15%;
-  margin-top: 20px;
-  padding: 20px;
+  width: 80%;
+  margin-right: 1%;
+  margin-left: 20%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding-right: 10%;
 `
 
 const ServiceBox = styled.div`
@@ -106,6 +101,26 @@ const ServiceTitle = styled.p`
 
 const ServiceBody = styled.div`
   border: 1px solid red;
+`
+
+const QuestionBar = styled.p`
+  width: 90%;
+  border-left: 2px solid rgb(134, 89, 45);
+  padding-left: 40px;
+  font-size: 20px;
+  font-family: "Cinzel";
+  font-weight: 600;
+`
+
+const AnswerBox = styled.p`
+  width: 90%;
+  border-left: 1px solid #48689A;
+  margin-left: 40px;
+  padding-left: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 16px;
+  white-space: pre-wrap,
 `
 
 export default Services

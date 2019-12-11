@@ -24,6 +24,7 @@ const Footer = () => {
           Telefon: 501-498-704 <br />
           email: kancelaria@radcakopania.pl
         </Desc>
+        <Link to='/privacy-policy' style={LinkStyles}> Polityka prywatności </Link>
       </ColDesc>
     </BoxOpacity>
   </Box>
@@ -38,7 +39,8 @@ const Box = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Cinzel";
+  font-family: "Lato";
+  font-size: 15px;
 `
 
 const BoxOpacity = styled.div`
@@ -72,7 +74,17 @@ const ColDesc = styled.div`
 const Desc = styled.p`
   text-align: left;
   color: white;
-  font-size: 10px;
+  font-size: 13px;
 `
+
+const LinkStyles = {
+  color: 'white',
+  textDecoration: 'none',
+  fontSize: '13px',
+  cursor: 'pointer',
+  border: '1px solid white',
+  padding: '5px 10px 5px 10px',
+  marginTop: '10px',
+}
 
 export default Footer

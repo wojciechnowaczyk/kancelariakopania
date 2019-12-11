@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Password Protected Area"
+AuthUserFile /home/numitor123/ftp/Kopania/public/.htpasswd
+Require valid-user

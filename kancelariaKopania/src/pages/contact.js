@@ -8,7 +8,7 @@ import styled from "styled-components"
 import Menu from "../components/menu"
 import Footer from "../components/footer"
 
-import building from "../images/building.jpg"
+import building from "../images/building1.jpg"
 
 const Contact = () => (
   <>
@@ -71,7 +71,7 @@ const HeaderOpacity = styled.div`
 
 const HeaderTitle = styled.h1`
   color: white;
-  font-size: 40px;
+  font-size: 60px;
 `
 
 const MainBody = styled.div`
@@ -82,12 +82,12 @@ const MainBody = styled.div`
 `
 
 const SubTitle = styled.h2`
-  font-size: 30px;
-  border-bottom: 4px solid #487AF9;
+  font-size: 20px;
+  border-bottom: 4px solid #48689A;
 `
 
 const ContactInfo = styled.p`
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 15px;
 `
 

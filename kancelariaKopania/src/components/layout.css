@@ -62,7 +62,6 @@ dfn {
 }
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
 }
 mark {
   background-color: #ff0;
@@ -218,7 +217,6 @@ img {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
 }
 h1 {
   margin-left: 0;
@@ -228,13 +226,14 @@ h1 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
   color: inherit;
   font-family: "Cinzel";
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
   line-height: 1.1;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 h2 {
   margin-left: 0;

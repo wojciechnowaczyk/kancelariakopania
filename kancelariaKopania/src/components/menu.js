@@ -1,11 +1,30 @@
-import React from "react"
+import React, { Component } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import scrollTo from 'gatsby-plugin-smoothscroll'
 
 import logo from "../images/logo.png"
 
-const Menu = () => {
+class menu extends React.Component{
+  constructor(props) {
+    super(props);
+    console.log(this.props);
+    this.state = {
+      showSubMenu: false,
+    }
+  }
+
+  displaySubMenu = () => {
+    this.setState(prevState => ({
+      showSubMenu: !prevState.showSubMenu
+    }))
+  }
+
+  scroll = (id) => {
+    scrollTo(id);
+    //this.props.showHide(id.charAt(id.length-1));
+  }
+  render(){
   return(
   <Box>
     <LeftBox>
@@ -25,7 +44,22 @@ const Menu = () => {
           <LinkButton onClick={()=> scrollTo('#content')}> O kancelarii </LinkButton>
         </Line>
         <Line>
-          <LinkButton onClick={()=> scrollTo('#services')}> Usługi </LinkButton>
+          <LinkButton onClick={()=> scrollTo('#services')} onMouseEnter={()=>this.displaySubMenu()}> Usługi </LinkButton>
+          {this.state.showSubMenu &&
+          <SubMenu onMouseLeave={()=>this.displaySubMenu()}>
+            <LinkSubButton onClick={()=> this.scroll('#services0')}> Zakładanie i obsługa prawna spółek, KRS </LinkSubButton>
+            <LinkSubButton onClick={()=> this.scroll('#services1')}> Prawo cywilne, umowy, postępowania przed sądami</LinkSubButton>
+            <LinkSubButton onClick={()=> this.scroll('#services2')}> Prawo pracy i ubezpieczeń społecznych – ZUS</LinkSubButton>
+            <LinkSubButton onClick={()=> this.scroll('#services3')}> Prawo karne gospodarcze i karnoskarbowe</LinkSubButton>
+            <LinkSubButton onClick={()=> this.scroll('#services4')}> Postępowania sądowe, egzekucyjne, windykacja należności</LinkSubButton>
+            <LinkSubButton onClick={()=> this.scroll('#services5')}> Bieżące konsultacje oraz weryfikacja dokumentów</LinkSubButton>
+            <LinkSubButton onClick={()=> this.scroll('#services6')}> Klienci indywidualni</LinkSubButton>
+            <LinkSubButton onClick={()=> this.scroll('#services7')}> Prawo i postępowanie karne oraz wykroczeniowe</LinkSubButton>
+            <LinkSubButton onClick={()=> this.scroll('#services8')}> Prawo cywilne, odszkodowania</LinkSubButton>
+            <LinkSubButton onClick={()=> this.scroll('#services9')}> Prawo rodzinne</LinkSubButton>
+            <LinkSubButton onClick={()=> this.scroll('#services10')}> Prawo pracy</LinkSubButton>
+          </SubMenu>
+          }
         </Line>
         <Line>
           <LinkButton onClick={()=> scrollTo('#horseback')}> Prawo dla miłośników koni i jeździectwa </LinkButton>
@@ -40,6 +74,7 @@ const Menu = () => {
     </RigthBox>
   </Box>
 )}
+}
 
 const Box = styled.div`
   width: 100%;
@@ -54,6 +89,10 @@ const Box = styled.div`
   height: 100px;
   z-index: 1001;
   background-color: white;
+
+  @media screen and (max-width: 999px){
+    display: none;
+  }
 `
 
 const Logotype = styled.img`
@@ -62,14 +101,14 @@ const Logotype = styled.img`
 `
 
 const LeftBox = styled.div`
-  width: 35%;
+  width: 30%;
   display: flex;
   align-items: center;
   justify-content: center;
 `
 
 const RigthBox = styled.div`
-  width: 65%;
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,14 +141,18 @@ const LinkButton = styled.button`
   color: black;
   text-decoration: none;
   font-family: "Cinzel";
-  font-size: 16px;
-  margin-left: 15;
-  margin-right: 15;
+  font-size: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
   border: none;
   background: none;
   cursor: pointer;
+  border-bottom: 2px solid transparent;
   &:focus{
     outline:none;
+  }
+  &:hover{
+    border-bottom: 2px solid #48689A;
   }
 `
 
@@ -126,4 +169,35 @@ const ActiveStyles = {
   borderBottom: 'solid #48689A 2px',
 }
 
-export default Menu
+const LinkSubButton = styled.button`
+  color: black;
+  text-decoration: none;
+  font-family: "Cinzel";
+  font-size: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: none;
+  text-align: left;
+  background: none;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  &:focus{
+    outline:none;
+  }
+  &:hover{
+    border-bottom: 2px solid #48689A;
+  }
+`
+
+const SubMenu = styled.div`
+  position: fixed;
+  top: 98px;
+  background-color: white;
+  display: flex;
+  align-items: flex-start;
+  jsutofy-content: center;
+  flex-direction: column;
+  border: 2px solid rgb(134, 89, 45);
+`
+
+export default menu

@@ -9,22 +9,25 @@ import SEO from "../components/seo"
 import PropTypes from "prop-types"
 
 import Menu from "../components/menu"
+import RWDMenu from "../components/RWDMenu"
 import Footer from "../components/footer"
 
 import law from "../images/pattern1.png"
 import costs from "../data/costs.json"
 import logo from "../images/logo.png"
-import building from "../images/building1.jpg"
-import books from "../images/books1.jpg"
-import agreement from "../images/agreement1.jpg"
+import building from "../images/building.jpg"
+import books from "../images/books.jpg"
+import agreement from "../images/agreement.jpg"
 import horse from "../images/horse.jpg"
 
 class IndexPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state= {show: [false, false, false, false, false, false, false, false, false, false]}
+    this.state= {
+      show: [false, false, false, false, false, false, false, false, false, false],
+      showCosts: [false, false, false, false, false, false],
+    }
   }
-
   showHide(num){
      this.setState((prevState) => {
          const newItems = [...prevState.show];
@@ -33,11 +36,20 @@ class IndexPage extends React.Component {
      });
  }
 
+ showHideCosts(num){
+    this.setState((prevState) => {
+        const newItems = [...prevState.showCosts];
+        newItems[num] = !newItems[num];
+        return {showCosts: newItems};
+    });
+}
+
   render(){
     return(
       <>
         <SEO title="O Kancelarii" />
-        <Menu />
+        <RWDMenu showHide = {this.showHide.bind(this)}/>
+        <Menu showHide = {this.showHide.bind(this)}/>
         <MainHeader>
           <HeaderOpacity1>
             <HeaderTop>
@@ -54,12 +66,6 @@ class IndexPage extends React.Component {
                 </HeaderTitle1>
               </TitleBox>
             </HeaderTop>
-            <MenuBox>
-              <LinkButton onClick={()=> scrollTo('#content')} > O kancelarii </LinkButton>
-              <Link to="/services/" style={LinkStyles}> Usługi </Link>
-              <Link to="/costs/" style={LinkStyles}> Wynagrodzenie </Link>
-              <Link to="/contact/" style={LinkStyles}> Kontakt </Link>
-            </MenuBox>
           </HeaderOpacity1>
         </MainHeader>
         <MainBody>
@@ -82,9 +88,9 @@ class IndexPage extends React.Component {
           </HeaderOpacity>
         </HeaderServices>
         <MainBody>
-          <QuestionBar onClick={()=>this.showHide(0)}>Zakładanie i obsługa prawna spółek, KRS</QuestionBar>
+          <QuestionBar onClick={()=>this.showHide(0)} id='services0'>Zakładanie i obsługa prawna spółek, KRS</QuestionBar>
           {this.state.show[0] === true &&
-          <AnswerBox>Prowadzenie każdej firmy wymaga rzetelnej, profesjonalnej i skutecznej obsługi prawnej. Kompleksowo dbamy o kwestie prawne Państwa firmy, dlatego:
+          <AnswerBox onClick={()=>this.showHide(0)}><p>Prowadzenie każdej firmy wymaga rzetelnej, profesjonalnej i skutecznej obsługi prawnej. Kompleksowo dbamy o kwestie prawne Państwa firmy, dlatego:</p>
             <ul>
               <li>Doradzamy przy założeniu spółki</li>
               <li>Kompletujemy wymagane dokumenty</li>
@@ -104,10 +110,10 @@ class IndexPage extends React.Component {
           </AnswerBox>
         }
 
-          <QuestionBar onClick={()=>this.showHide(1)}>Prawo cywilne, umowy, postępowania przed sądami</QuestionBar>
+          <QuestionBar onClick={()=>this.showHide(1)} id='services1'>Prawo cywilne, umowy, postępowania przed sądami</QuestionBar>
           {this.state.show[1] === true &&
-          <AnswerBox>
-            Świadczymy kompleksową pomoc prawną:
+          <AnswerBox onClick={()=>this.showHide(1)}>
+            <p>Świadczymy kompleksową pomoc prawną:</p>
             <ul>
               <li>Oferujemy doradztwo prawne w zakresie relacji handlowych</li>
               <li>Zapewniamy wsparcie prawne w rozwiązywaniu konfliktów w biznesie</li>
@@ -125,9 +131,9 @@ class IndexPage extends React.Component {
           </AnswerBox>
         }
 
-          <QuestionBar onClick={()=>this.showHide(2)}>Prawo pracy i ubezpieczeń społecznych – ZUS</QuestionBar>
+          <QuestionBar onClick={()=>this.showHide(2)} id='services2'>Prawo pracy i ubezpieczeń społecznych – ZUS</QuestionBar>
           {this.state.show[2] === true &&
-          <AnswerBox>Niemal każdego dorosłego Polaka dotyczą kwestie związane z prawem pracy i ZUS-em, dlatego nasze usługi prawne obejmują:
+          <AnswerBox onClick={()=>this.showHide(2)}><p>Niemal każdego dorosłego Polaka dotyczą kwestie związane z prawem pracy i ZUS-em, dlatego nasze usługi prawne obejmują:</p>
           <ul>
             <li>Kompleksowe opracowanie dokumentacji związanej z zatrudnieniem pracownika, w tym:
             sporządzanie umów o pracę, umów o zakazie konkurencji i zachowania poufności informacji,
@@ -140,10 +146,10 @@ class IndexPage extends React.Component {
           </AnswerBox>
         }
 
-          <QuestionBar onClick={()=>this.showHide(3)}>Prawo karne gospodarcze i karnoskarbowe</QuestionBar>
+          <QuestionBar onClick={()=>this.showHide(3)} id='services3'>Prawo karne gospodarcze i karnoskarbowe</QuestionBar>
           {this.state.show[3] === true &&
-          <AnswerBox>
-            Występujemy zarówno jako pełnomocnik pokrzywdzonych jak i obrońca podejrzanych, oskarżonych i skazanych. Nasze usługi obejmują:
+          <AnswerBox onClick={()=>this.showHide(3)}>
+            <p>Występujemy zarówno jako pełnomocnik pokrzywdzonych jak i obrońca podejrzanych, oskarżonych i skazanych. Nasze usługi obejmują:</p>
             <ul>
               <li>Pełną reprezentację przed organami ścigania i sądami powszechnymi</li>
               <li>Obronę członków organów spółek prawa handlowego przed działaniami na szkodę
@@ -154,10 +160,10 @@ class IndexPage extends React.Component {
           </AnswerBox>
         }
 
-          <QuestionBar onClick={()=>this.showHide(4)}>Postępowania sądowe, egzekucyjne, windykacja należności</QuestionBar>
+          <QuestionBar onClick={()=>this.showHide(4)} id='services4'>Postępowania sądowe, egzekucyjne, windykacja należności</QuestionBar>
           {this.state.show[4] === true &&
-          <AnswerBox>
-          Czas to pieniądz, dlatego gwarantujemy podjęcie szybkich działań prawnych w zakresie egzekwowania długów:
+          <AnswerBox onClick={()=>this.showHide(4)}>
+          <p>Czas to pieniądz, dlatego gwarantujemy podjęcie szybkich działań prawnych w zakresie egzekwowania długów:</p>
           <ul>
             <li>Przeprowadzamy kompleksową analizę szans i ryzyka wybranego sposobu dochodzenia
             roszczeń</li>
@@ -172,10 +178,10 @@ class IndexPage extends React.Component {
           </AnswerBox>
         }
 
-          <QuestionBar onClick={()=>this.showHide(5)}>Bieżące konsultacje oraz weryfikacja dokumentów</QuestionBar>
+          <QuestionBar onClick={()=>this.showHide(5)} id='services5'>Bieżące konsultacje oraz weryfikacja dokumentów</QuestionBar>
           {this.state.show[5] === true &&
-          <AnswerBox>
-          Zdajemy sobie sprawę z tego, że potrzeba konsultacji prawnej pojawia się najczęściej niespodziewanie i w najmniej oczekiwanym momencie. Nie zawsze da się na taką sytuację przygotować. Dlatego też:
+          <AnswerBox onClick={()=>this.showHide(5)}>
+          <p>Zdajemy sobie sprawę z tego, że potrzeba konsultacji prawnej pojawia się najczęściej niespodziewanie i w najmniej oczekiwanym momencie. Nie zawsze da się na taką sytuację przygotować. Dlatego też:</p>
           <ul>
             <li>Możecie Państwo korzystać z usług naszej kancelarii 5 dni w tygodniu</li>
             <li>Na bieżąco otrzymujecie Państwo porady zarówno w drobnych jak i skomplikowanych
@@ -187,16 +193,16 @@ class IndexPage extends React.Component {
           </AnswerBox>
         }
 
-          <QuestionBar onClick={()=>this.showHide(6)}>Klienci indywidualni</QuestionBar>
+          <QuestionBar onClick={()=>this.showHide(6)} id='services6'>Klienci indywidualni</QuestionBar>
           {this.state.show[6] === true &&
-          <AnswerBox>Świadczymy pomoc prawną na rzecz podmiotów indywidualnych (osób fizycznych). Koncentrujemy swoje działania na rozwiązywaniu problemów, z którymi spotykacie się Państwo w życiu prywatnym i zawodowym. Oferujemy usługi prawne w języku polskim, angielskim i francuskim.
+          <AnswerBox onClick={()=>this.showHide(6)}><p>Świadczymy pomoc prawną na rzecz podmiotów indywidualnych (osób fizycznych). Koncentrujemy swoje działania na rozwiązywaniu problemów, z którymi spotykacie się Państwo w życiu prywatnym i zawodowym. Oferujemy usługi prawne w języku polskim, angielskim i francuskim.</p>
           </AnswerBox>
         }
 
-          <QuestionBar onClick={()=>this.showHide(7)}>Prawo i postępowanie karne oraz wykroczeniowe</QuestionBar>
+          <QuestionBar onClick={()=>this.showHide(7)} id='services7'>Prawo i postępowanie karne oraz wykroczeniowe</QuestionBar>
           {this.state.show[7] === true &&
-          <AnswerBox>
-          Wychodzimy z założenia, że dla pomyślnego zakończenia postępowania kluczowa jest aktywność i zaangażowanie pełnomocnika. Dajemy zatem Państwu gwarancję
+          <AnswerBox onClick={()=>this.showHide(7)}>
+          <p>Wychodzimy z założenia, że dla pomyślnego zakończenia postępowania kluczowa jest aktywność i zaangażowanie pełnomocnika. Dajemy zatem Państwu gwarancję</p>
           <ul>
             <li>Reprezentowania od samego początku postępowania karnego i wykroczeniowego</li>
             <li>Czynnego udziału w przesłuchaniach przed sądem oraz organami ścigania</li>
@@ -210,10 +216,10 @@ class IndexPage extends React.Component {
           </AnswerBox>
         }
 
-          <QuestionBar onClick={()=>this.showHide(8)}>Prawo cywilne, odszkodowania</QuestionBar>
+          <QuestionBar onClick={()=>this.showHide(8)} id='services8'>Prawo cywilne, odszkodowania</QuestionBar>
           {this.state.show[8] === true &&
-          <AnswerBox>
-          Zdajemy sobie sprawę z tego, że szybkie i skuteczne działania prawne – zwłaszcza w sprawach cywilnych lub odszkodowawczych – stanowi dla Państwa priorytet. Mając to na uwadze:
+          <AnswerBox onClick={()=>this.showHide(8)}>
+          <p>Zdajemy sobie sprawę z tego, że szybkie i skuteczne działania prawne – zwłaszcza w sprawach cywilnych lub odszkodowawczych – stanowi dla Państwa priorytet. Mając to na uwadze:</p>
           <ul>
             <li>Prowadzimy korespondencję na etapie pozasądowym. Bardzo często jest to skuteczna metoda
             dochodzenia roszczeń, eliminująca konieczność wszczynania postępowania sądowego</li>
@@ -227,10 +233,10 @@ class IndexPage extends React.Component {
           </AnswerBox>
         }
 
-          <QuestionBar onClick={()=>this.showHide(9)}>Prawo rodzinne</QuestionBar>
+          <QuestionBar onClick={()=>this.showHide(9)} id='services9'>Prawo rodzinne</QuestionBar>
           {this.state.show[9] === true &&
-          <AnswerBox>
-          Wszystkie sprawy rodzinne wiążą się zawsze z wielkimi emocjami po obu stronach oraz wymagają indywidualnego podejścia i opieki ze strony prawnika. Stąd też zapewniam naszym klientom pełną obsługę prawną w kwestii: 
+          <AnswerBox onClick={()=>this.showHide(9)}>
+          <p>Wszystkie sprawy rodzinne wiążą się zawsze z wielkimi emocjami po obu stronach oraz wymagają indywidualnego podejścia i opieki ze strony prawnika. Stąd też zapewniam naszym klientom pełną obsługę prawną w kwestii: </p>
           <ul>
             <li>Konsultacji i analizy bieżącej sytuacji klienta i członków jego rodziny</li>
             <li>Przygotowania pozwów i wniosków, a następnie prowadzenie spraw sądowych</li>
@@ -240,10 +246,10 @@ class IndexPage extends React.Component {
           </AnswerBox>
         }
 
-          <QuestionBar onClick={()=>this.showHide(10)}>Prawo pracy</QuestionBar>
+          <QuestionBar onClick={()=>this.showHide(10)} id='services10'>Prawo pracy</QuestionBar>
           {this.state.show[10] === true &&
-          <AnswerBox>
-          Umowa o pracę to wciąż bardzo popularna forma zatrudnienia, wychodząc zatem naprzeciw Państwa potrzebom, proponujemy: 
+          <AnswerBox onClick={()=>this.showHide(10)}>
+          <p>Umowa o pracę to wciąż bardzo popularna forma zatrudnienia, wychodząc zatem naprzeciw Państwa potrzebom, proponujemy: </p>
           <ul>
             <li>Przygotowanie oraz weryfikację umowy o pracę</li>
             <li>Konsultacje dotyczące wypowiedzenia umowy o pracę</li>
@@ -266,7 +272,7 @@ class IndexPage extends React.Component {
         </HeaderHorse>
 
         <MainBody>
-        Radca prawny Joanna Kopania uprawia jeździectwo od niemal 30 lat, jest czynnym zawodnikiem dyscypliny skoki przez przeszkody. Dlatego zapewniamy reprezentację i doradztwo we wszelkich sprawach związanych z treningiem, transportem, hodowlą i leczeniem koni, prowadzeniem ośrodków jeździeckich oraz obrotem końmi:
+        <p>Radca prawny Joanna Kopania uprawia jeździectwo od niemal 30 lat, jest czynnym zawodnikiem dyscypliny skoki przez przeszkody. Dlatego zapewniamy reprezentację i doradztwo we wszelkich sprawach związanych z treningiem, transportem, hodowlą i leczeniem koni, prowadzeniem ośrodków jeździeckich oraz obrotem końmi:</p>
         <ul>
           <li>Przygotowanie oraz weryfikacja umów</li>
           <li>Konsultacje i prowadzenie negocjacji przedsądowych</li>
@@ -284,7 +290,62 @@ class IndexPage extends React.Component {
           </HeaderOpacity>
         </HeaderCosts>
         <MainBody>
-          Costs
+          <p>Na początku współpracy ustalamy wspólnie z klientem wysokość wynagrodzenia lub sposób jego ustalenia. Jesteśmy otwarci na propozycję Klientów i nie wykluczamy negocjacji proponowanych przez Nas zasad współpracy.
+          Kancelaria stosuje następujące warianty wynagrodzenia:</p>
+          <QuestionBar onClick={()=>this.showHideCosts(0)}>1. Wynagrodzenie za ustną poradę prawną</QuestionBar>
+          {this.state.showCosts[0] === true &&
+          <AnswerBox onClick={()=>this.showHideCosts(0)}><p><b>Stała opłata w wysokości 200 zł.</b></p>
+
+            <p>W przypadku zlecenia prowadzenia sprawy, koszt porady prawej zalicza się na poczet
+            wynagrodzenia za prowadzenie sprawy.</p>
+
+            <p>Porada prawna może być udzielona osobiście, poprzez e-mail, rozmowę telefoniczną lub
+            telekonferencję.</p>
+          </AnswerBox>
+          }
+          <QuestionBar onClick={()=>this.showHideCosts(1)}>2. Wynagrodzenie godzinowe</QuestionBar>
+          {this.state.showCosts[1] === true &&
+          <AnswerBox onClick={()=>this.showHideCosts(1)}><p><b>Stawka wynagrodzenia godzinowego jest ustalana z klientem na początku współpracy a wysokość wynagrodzenia zależna od ilości godzin poświęconych na dane zlecenie.</b></p></AnswerBox>
+          }
+
+          <QuestionBar onClick={()=>this.showHideCosts(2)}>3. Wynagrodzenie ryczałtowe</QuestionBar>
+          {this.state.showCosts[2] === true &&
+          <AnswerBox onClick={()=>this.showHideCosts(2)}><p><b>Stawka wynagrodzenia określona jest na początku współpracy; pozostaje niezmienna i niezależna od czasu, jaki został poświęcony na dane zlecenie. </b>Najczęściej stosowane w przypadku przygotowania pism w postępowaniu sądowym <b>(od 300 zł)</b>, umów, w tym ich opiniowaniu (w zależności od stopnia skomplikowania i wielkości umowy – <b>od 300 zł</b>), opinii prawnych <b>(od 500 zł</b>), rejestracji spółek w KRS (<b>od 1.000 zł</b>).</p>
+          </AnswerBox>
+          }
+
+          <QuestionBar onClick={()=>this.showHideCosts(3)}>4. Wynagrodzenie abonamentowe</QuestionBar>
+          {this.state.showCosts[3] === true &&
+          <AnswerBox onClick={()=>this.showHideCosts(3)}>
+            <p><b>Stała wysokość okresowego wynagrodzenia za z góry określoną liczbę godzin w danym okresie rozliczeniowym.</b> Model stosowany najczęściej przez podmioty, u których zapotrzebowania na pomoc prawną występuje w bieżącej działalności. </p>
+            <p><b>Kancelaria w swojej ofercie posiada abonamenty miesięcznie już od 200 zł netto</b>, które są idealne dla niewielkich przedsiębiorców, którzy w ten sposób mogą zapewnić sobie stałą obsługę prawną, za stosunkowo niewielki pieniądze.</p>
+          </AnswerBox>
+          }
+
+          <QuestionBar onClick={()=>this.showHideCosts(4)}>5. Wynagrodzenie w sporach sądowych</QuestionBar>
+          {this.state.showCosts[4] === true &&
+          <AnswerBox onClick={()=>this.showHideCosts(4)}>
+            <p><b>Wynagrodzenie uzależnione od stopnia skomplikowania sprawy oraz wysokości dochodzonego roszczenia (jeśli z takim mamy do czynienia).</b> Ustalane zawsze na początku współpracy. <b>Kancelaria w tym zakresie stosuje dwa warianty:</b>
+              <ul>
+                <li>wynagrodzenie w formie ryczałtu płatne przy podjęciu sprawy,</li>
+                <li>wynagrodzenie składające się z opłaty wstępnej (niższej, niż przy ryczałcie) i premii od sukcesu (tzw. success fee) stanowiącej ustalony z Klientem procent od uzyskanego dla niego świadczenia.</li>
+              </ul>
+            </p>
+          </AnswerBox>
+          }
+
+          <QuestionBar onClick={()=>this.showHideCosts(5)}>6. Wynagrodzenie w sprawach windykacyjnych</QuestionBar>
+          {this.state.showCosts[5] === true &&
+          <AnswerBox onClick={()=>this.showHideCosts(5)}>
+            <p><b>Wynagrodzenie stosowane w stosunkowo prostych sprawach o zapłatę oraz o odszkodowanie. Kancelaria stosuje tu dwa warianty:</b>
+              <ul>
+                <li>wynagrodzenie w formie ryczałtu płatne przy podjęciu sprawy, którego wysokość oparta jest na stawkach zastępstwa procesowego wynikających z rozporządzenia Ministra Sprawiedliwości,</li>
+                <li>wynagrodzenie składające się z opłaty wstępnej (możliwość podjęcia sprawy za wynagrodzenie w wysokości już od 100 zł) i premii od sukcesu (tzw. success fee) stanowiącej ustalony z Klientem procent od uzyskanego dla niego świadczenia.</li>
+              </ul>
+            </p>
+          </AnswerBox>
+          }
+          <LinkButton onClick={()=> scrollTo('#contact')}> Zapraszamy do współpracy! </LinkButton>
         </MainBody>
         <Header id='contact'>
           <HeaderOpacity>
@@ -343,13 +404,18 @@ const HeaderOpacity1 = styled.div`
 
 const HeaderTitle1 = styled.h1`
   color: white;
-  font-size: 30px;
+  font-size: 50px;
 `
 const TitleBox = styled.div`
   flex-direction: column;
   display: flex;
   justify-content: center;
   margin-left: 20px;
+
+  @media screen and (max-width: 620px){
+    margin-left: 0px;
+    text-align: center;
+  }
 `
 const Description = styled.p`
   font-size: 16px;
@@ -371,27 +437,20 @@ const ServiceBody = styled.div`
 const Logotype = styled.img`
   width: 200px;
   height: 200px;
+
+  @media screen and (max-width: 620px){
+    margin-bottom: 30px;
+  }
 `
 
-const MenuBox = styled.div`
-  flex-direction: row;
-  display: flex;
-  margin-top: 50px;
-`
 const HeaderTop = styled.div`
   flex-direction: row;
   display: flex;
-`
-const LinkButton = styled.button`
-  color: white;
-  font-family: "Cinzel";
-  font-size: 16px;
-  padding: 20px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  &:focus{
-    outline:none;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 620px){
+    flex-direction: column;
   }
 `
 const LinkStyles = {
@@ -404,7 +463,7 @@ const LinkStyles = {
 
 const Header = styled.div`
   width: 100%;
-  height: 75vh;
+  height: 60vh;
   background-image: url(${building});
   background-size: cover;
   display: flex;
@@ -420,11 +479,16 @@ const MainHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 100px;
+
+  @media screen and (max-width: 999px){
+    margin-top: 0px;
+  }
 `
 
 const HeaderOpacity = styled.div`
-  width: 70%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
@@ -433,7 +497,8 @@ const HeaderOpacity = styled.div`
 
 const HeaderTitle = styled.h1`
   color: white;
-  font-size: 60px;
+  font-size: 45px;
+  text-align: center;
 `
 
 const MainBody = styled.div`
@@ -441,6 +506,11 @@ const MainBody = styled.div`
   margin-left: 20%;
   margin-top: 20px;
   padding: 20px;
+
+  @media screen and (max-width: 620px){
+    width: 80%;
+    margin-left: 10%;
+  }
 `
 
 const SubTitle = styled.h2`
@@ -463,7 +533,7 @@ const Map = styled.iframe`
 
 const HeaderServices = styled.div`
   width: 100%;
-  height: 75vh;
+  height: 60vh;
   background-image: url(${books});
   background-size: cover;
   display: flex;
@@ -473,7 +543,7 @@ const HeaderServices = styled.div`
 
 const HeaderHorse = styled.div`
   width: 100%;
-  height: 75vh;
+  height: 60vh;
   background-image: url(${horse});
   background-size: cover;
   display: flex;
@@ -483,7 +553,7 @@ const HeaderHorse = styled.div`
 
 const HeaderCosts = styled.div`
   width: 100%;
-  height: 75vh;
+  height: 60vh;
   background-image: url(${agreement});
   background-size: cover;
   display: flex;
@@ -497,8 +567,8 @@ const QuestionBar = styled.p`
   padding-left: 40px;
   font-size: 20px;
   font-family: "Cinzel";
-  font-weight: 600;
   margin-bottom: 20px;
+  cursor: pointer;
 `
 
 const AnswerBox = styled.div`
@@ -510,6 +580,22 @@ const AnswerBox = styled.div`
   margin-bottom: 40px;
   font-size: 16px;
   white-space: pre-wrap;
+  cursor: pointer;
+`
+
+const LinkButton = styled.a`
+  color: black;
+  text-decoration: none;
+  font-family: "Lato";
+  border: none;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  &:focus{
+    outline:none;
+  }
+  &:hover{
+    border-bottom: 2px solid #48689A;
+  }
 `
 
 

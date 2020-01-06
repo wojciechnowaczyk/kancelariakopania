@@ -378,7 +378,7 @@ p {
   padding-right: 0;
   padding-top: 0;
   margin-block-start: 0;
-  margin-block-end: 0;
+  margin-block-end: 10px;
 }
 figure {
   margin-left: 0;

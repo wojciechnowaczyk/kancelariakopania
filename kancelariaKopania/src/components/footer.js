@@ -44,6 +44,11 @@ const Box = styled.div`
   justify-content: center;
   font-family: "Lato";
   font-size: 15px;
+
+  @media screen and (max-width: 750px){
+    width: 100%;
+    margin-left: 0%;
+  }
 `
 
 const BoxOpacity = styled.div`

@@ -7,33 +7,36 @@ import logo from '../images/logo.png'
 
 const Footer = () => {
   return(
-  <Box>
-    <BoxOpacity>
-      <Col>
-        <Logotype src={logo}/>
-      </Col>
-      <ColDesc>
-        <Desc>
-          Kancelaria Radcy Prawnego Joanna Kopania
-        </Desc>
-        <Desc>
-          ul. Platynowa 28 <br />
-          62-052 Komorniki Poznań
-        </Desc>
-        <Desc>
-          Telefon: 501-498-704 <br />
-          email: kancelaria@radcakopania.pl
-        </Desc>
-        <Link to='/privacy-policy' style={LinkStyles}> Polityka prywatności </Link>
-      </ColDesc>
-    </BoxOpacity>
-  </Box>
+    <BorderBox>
+      <Box>
+          <Col>
+            <Logotype src={logo}/>
+          </Col>
+          <ColDesc>
+            <Desc>
+              Kancelaria Radcy Prawnego Joanna Kopania
+            </Desc>
+            <Desc>
+              ul. Platynowa 28 <br />
+              62-052 Komorniki Poznań
+            </Desc>
+            <Desc>
+              Telefon: 501-498-704 <br />
+              email: kancelaria@radcakopania.pl
+            </Desc>
+            <Link to='/privacy-policy' style={LinkStyles}> Polityka prywatności </Link>
+          </ColDesc>
+      </Box>
+    </BorderBox>
 )}
-
-const Box = styled.footer`
+const BorderBox = styled.footer`
+  border: 2px solid rgb(134, 89, 45);
   width: 100%;
-  min-height: 400px;
-  background: url(${law});
+`
+const Box = styled.div`
+  width: 60%;
+  margin-left: 20%;
+  padding: 20px;
   background-position: center;
   background-size: cover;
   display: flex;
@@ -73,16 +76,16 @@ const ColDesc = styled.div`
 
 const Desc = styled.p`
   text-align: left;
-  color: white;
+  color: black;
   font-size: 13px;
 `
 
 const LinkStyles = {
-  color: 'white',
+  color: 'black',
   textDecoration: 'none',
   fontSize: '13px',
   cursor: 'pointer',
-  border: '1px solid white',
+  border: '1px solid black',
   padding: '5px 10px 5px 10px',
   marginTop: '10px',
 }

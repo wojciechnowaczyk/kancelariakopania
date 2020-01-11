@@ -62,7 +62,7 @@ class RWDMenu extends React.Component {
             </ul>
           </Line>
           <Line>
-            <LinkButton onClick={()=> scrollTo('#horseback')}> Prawo dla miłośników koni i jeździectwa </LinkButton>
+            <LinkButton onClick={()=> scrollTo('#horseback')}> Prawo dla miłośników jeździectwa </LinkButton>
           </Line>
           <Line>
             <LinkButton onClick={()=> scrollTo('#costs')}> Wynagrodzenie </LinkButton>

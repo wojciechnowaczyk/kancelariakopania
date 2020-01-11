@@ -66,7 +66,7 @@ class menu extends React.Component{
           }
         </Line>
         <Line>
-          <LinkButton onClick={()=> scrollTo('#horseback')} onMouseEnter={()=>this.closeSubMenu()}> Prawo dla miłośników koni i jeździectwa </LinkButton>
+          <LinkButton onClick={()=> scrollTo('#horseback')} onMouseEnter={()=>this.closeSubMenu()}> Prawo dla miłośników jeździectwa </LinkButton>
         </Line>
         <Line>
           <LinkButton onClick={()=> scrollTo('#costs')} onMouseEnter={()=>this.closeSubMenu()}> Wynagrodzenie </LinkButton>
@@ -125,6 +125,18 @@ const MenuList = styled.ul`
 const HeaderTitle = styled.h1`
   color: black;
   font-size: 20px;
+
+  @media screen and (max-width: 1305px){
+    font-size: 17px;
+  }
+
+  @media screen and (max-width: 1188px){
+    font-size: 15px;
+  }
+
+  @media screen and (max-width: 1060px){
+    font-size: 13px;
+  }
 `
 const TitleBox = styled.div`
   flex-direction: column;
@@ -152,11 +164,24 @@ const LinkButton = styled.button`
   background: none;
   cursor: pointer;
   border-bottom: 2px solid transparent;
+  font-weight: bold;
   &:focus{
     outline:none;
   }
   &:hover{
     border-bottom: 2px solid #48689A;
+  }
+
+  @media screen and (max-width: 1305px){
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: 1188px){
+    font-size: 11px;
+  }
+
+  @media screen and (max-width: 1060px){
+    font-size: 10px;
   }
 `
 

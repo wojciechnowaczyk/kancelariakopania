@@ -265,7 +265,7 @@ class IndexPage extends React.Component {
         <HeaderHorse id='horseback'>
           <HeaderOpacity>
             <HeaderTitle>
-              Prawo dla miłośników koni i jeździectwa
+              Prawo dla miłośników jeździectwa
             </HeaderTitle>
           </HeaderOpacity>
         </HeaderHorse>
@@ -374,7 +374,7 @@ class IndexPage extends React.Component {
           również możliwy jest kontakt z Kancelarią pod podanymi numerami po godzinach pracy)
           </ContactInfo>
           <ContactInfo>
-          Zapewniamy Parking dla klientów
+          <b>Zapewniamy Parking dla klientów</b>
           </ContactInfo>
           <Map src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2437.2127705739167!2d16.829048415781113!3d52.348426156682756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47044f8dd975788d%3A0x167eb4747791e86c!2sPlatynowa%2028%2C%2062-052%20Komorniki!5e0!3m2!1spl!2spl!4v1573763401662!5m2!1spl!2spl" ></Map>
         </MainBody>

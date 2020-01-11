@@ -9,7 +9,7 @@ const Footer = () => {
     <BorderBox>
       <Box>
           <Col>
-            <Logotype src={logo}/>
+            <Logotype src={logo} alt="logotype"/>
           </Col>
           <ColDesc>
             <Desc>

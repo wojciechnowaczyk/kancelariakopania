@@ -25,7 +25,7 @@ class RWDMenu extends React.Component {
   scroll = (id) => {
     scrollTo(id);
     this.displayMenu();
-    this.props.showHide(id.charAt(id.length-1));
+    this.props.showHideMenu(id.match(/\d+/g).map(Number));
   }
   render(){
   return(

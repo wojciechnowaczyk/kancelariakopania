@@ -67,6 +67,10 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `keywords`,
+          content: ['kopania', 'prawo i konie', 'problem z koniem', 'zwrot konia', 'sprzedaż konia', 'transport koni', 'karne', 'prokuratura', 'organy ścigania'],
+        },
       ].concat(meta)}
     />
   )

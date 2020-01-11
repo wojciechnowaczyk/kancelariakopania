@@ -36,6 +36,14 @@ class IndexPage extends React.Component {
      });
  }
 
+ showHideMenu(num){
+    this.setState((prevState) => {
+        const newItems = [...prevState.show];
+        newItems[num] = true;
+        return {show: newItems};
+    });
+}
+
  showHideCosts(num){
     this.setState((prevState) => {
         const newItems = [...prevState.showCosts];
@@ -56,12 +64,12 @@ class IndexPage extends React.Component {
         >
           Ta strona korzysta z ciasteczek aby świadczyć usługi na najwyższym poziomie. Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie. Szczegółowe informacje w <Link style={CookiePrivacy} to='/privacy-policy'>Polityce Prywatności. </Link>
         </CookieConsent>
-        <RWDMenu showHide = {this.showHide.bind(this)}/>
-        <Menu showHide = {this.showHide.bind(this)} />
+        <RWDMenu showHideMenu = {this.showHideMenu.bind(this)}/>
+        <Menu showHideMenu = {this.showHideMenu.bind(this)} />
         <MainHeader>
           <HeaderOpacity1>
             <HeaderTop>
-              <Logotype src={logo} />
+              <Logotype src={logo} alt="logotype"/>
               <TitleBox>
                 <HeaderTitle1>
                   Kancelaria
@@ -578,8 +586,8 @@ const AnswerBox = styled.div`
   border-left: 1px solid #48689A;
   margin-left: 40px;
   padding-left: 40px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 70px;
+  margin-bottom: 70px;
   font-size: 16px;
   white-space: pre-wrap;
   cursor: pointer;

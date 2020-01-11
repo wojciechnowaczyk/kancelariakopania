@@ -31,13 +31,13 @@ componentDidMount(){
 
   scroll = (id) => {
     scrollTo(id);
-    this.props.showHide(id.match(/\d+/g).map(Number));
+    this.props.showHideMenu(id.match(/\d+/g).map(Number));
   }
   render(){
   return(
   <Box>
     <LeftBox>
-      <Logotype src={logo} />
+      <Logotype src={logo} alt="logotype"/>
       <TitleBox>
         <HeaderTitle>
           Kancelaria Radcy Prawnego

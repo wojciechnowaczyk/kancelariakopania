@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-import law from '../images/desk.jpg'
 import logo from '../images/logo.png'
 
 const Footer = () => {
@@ -27,6 +26,9 @@ const Footer = () => {
             <Link to='/privacy-policy' style={LinkStyles}> Polityka prywatności </Link>
           </ColDesc>
       </Box>
+      <Author href="https://www.linkedin.com/in/wojciech-nowaczyk-a1506211a/" target="_blank" rel="noopener noreferrer">
+        Made by Wojciech Nowaczyk
+      </Author>
     </BorderBox>
 )}
 const BorderBox = styled.footer`
@@ -94,5 +96,17 @@ const LinkStyles = {
   padding: '5px 10px 5px 10px',
   marginTop: '10px',
 }
+
+const Author = styled.a`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  font-family: "Lato";
+  font-size: 12px;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+`
 
 export default Footer

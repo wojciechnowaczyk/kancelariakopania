@@ -12,7 +12,6 @@ import Menu from "../components/menu"
 import RWDMenu from "../components/RWDMenu"
 import Footer from "../components/footer"
 
-import law from "../images/pattern1.png"
 import costs from "../data/costs.json"
 import logo from "../images/logo.png"
 import building from "../images/building.jpg"
@@ -382,15 +381,6 @@ class IndexPage extends React.Component {
   )}
   }
 
-const Header1 = styled.div`
-  width: 100%;
-  height: 99vh;
-  background-image: url(${law});
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
 
 const HeaderOpacity1 = styled.div`
   width: 100%;

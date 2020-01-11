@@ -117,6 +117,7 @@ const HeaderOpacity = styled.div`
 const HeaderTitle = styled.h1`
   color: white;
   font-size: 60px;
+  text-align: center;
 `
 
 const MainBody = styled.div`
@@ -150,6 +151,7 @@ const QuestionBar = styled.p`
   font-size: 20px;
   font-family: "Cinzel";
   font-weight: 600;
+  text-align: left;
 `
 
 const AnswerBox = styled.p`

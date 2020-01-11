@@ -10,7 +10,6 @@ import close from "../images/close.png"
 class RWDMenu extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {
       showMenu: false,
     }

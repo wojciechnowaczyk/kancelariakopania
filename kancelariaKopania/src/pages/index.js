@@ -71,15 +71,15 @@ class IndexPage extends React.Component {
             <HeaderTop>
               <Logotype src={logo} alt="logotype"/>
               <TitleBox>
-                <HeaderTitle1>
+                <MainHeaderTitle>
                   Kancelaria
-                </HeaderTitle1>
-                <HeaderTitle1>
+                </MainHeaderTitle>
+                <MainHeaderTitle>
                   Radcy Prawnego
-                </HeaderTitle1>
-                <HeaderTitle1>
+                </MainHeaderTitle>
+                <MainHeaderTitle>
                   Joanna Kopania
-                </HeaderTitle1>
+                </MainHeaderTitle>
               </TitleBox>
             </HeaderTop>
           </HeaderOpacity1>
@@ -410,7 +410,7 @@ const HeaderOpacity1 = styled.div`
   flex-direction: column;
 `
 
-const HeaderTitle1 = styled.h1`
+const MainHeaderTitle = styled.h1`
   color: white;
   font-size: 50px;
 `
@@ -507,6 +507,10 @@ const HeaderTitle = styled.h1`
   color: white;
   font-size: 45px;
   text-align: center;
+
+  @media screen and (max-width: 600px){
+    font-size: 30;
+  }
 `
 
 const MainBody = styled.div`
@@ -579,6 +583,7 @@ const QuestionBar = styled.p`
   font-family: "Cinzel";
   margin-bottom: 20px;
   cursor: pointer;
+  text-align: left;
 `
 
 const AnswerBox = styled.div`
@@ -611,7 +616,7 @@ const LinkButton = styled.a`
 
 const Cookie = {
   border: '2px solid rgb(134, 89, 45)',
-  height: '100px',
+  minHeight: '100px',
   backgroundColor: 'white',
   color: 'black',
   fontFamily: 'Lato',
@@ -621,6 +626,7 @@ const Cookie = {
   justifyContent: 'center',
   alignItems: 'center',
   textAlign: 'justify',
+  zIndex: 1004,
 }
 
 const CookiePrivacy = {

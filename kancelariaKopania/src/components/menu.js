@@ -15,10 +15,6 @@ class Menu extends React.Component{
     }
   }
 
-componentDidMount(){
-    console.log(this.props);
-  }
-
   displaySubMenu = () => {
     this.setState(prevState => ({
       showSubMenu: !prevState.showSubMenu

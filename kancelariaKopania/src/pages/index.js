@@ -24,7 +24,7 @@ class IndexPage extends React.Component {
   constructor(props) {
     super(props);
     this.state= {
-      show: [false, false, false, false, false, false, false, false, false, false],
+      show: [false, false, false, false, false, false, false, false, false, false, false],
       showCosts: [false, false, false, false, false, false],
     }
   }
@@ -68,8 +68,8 @@ class IndexPage extends React.Component {
             </HeaderTop>
           </HeaderOpacity1>
         </MainHeader>
-        <MainBody>
-          <Description id='content'>
+        <MainBody id='content'>
+          <Description>
           Kancelaria Radcy Prawnego Joanna Kopania działa od 2013 roku, świadcząc szeroko rozumianą
           pomoc prawną dla przedsiębiorców i osób fizycznych. Zajmujemy się reprezentacją Klientów w
           postępowaniach sądowych i windykacyjnych, przygotowywaniem pism procesowych, wniosków,
@@ -506,6 +506,8 @@ const MainBody = styled.div`
   margin-left: 20%;
   margin-top: 20px;
   padding: 20px;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 
   @media screen and (max-width: 620px){
     width: 80%;
@@ -588,6 +590,7 @@ const LinkButton = styled.a`
   text-decoration: none;
   font-family: "Lato";
   border: none;
+  font-size: 16px;
   cursor: pointer;
   border-bottom: 2px solid transparent;
   &:focus{

@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Kancelaria Radcy Prawnego Joanna Kopania`,
+    description: `Kancelaria Radcy Prawnego Joanna Kopania działa od 2013 roku, świadcząc szeroko rozumianą pomoc prawną dla przedsiębiorców i osób fizycznych. Zajmujemy się reprezentacją Klientów w postępowaniach sądowych i windykacyjnych, przygotowywaniem pism procesowych, wniosków, umów, porozumień, regulaminów i innych dokumentów wymaganych przez Klientów, przygotowywaniem opinii prawnych, jak również udzielaniem porad prawnych. Usługi prawne świadczymy w języku polskim, języku francuskim oraz języku angielskim. Chcemy aby nasze usługi prawne stanowiły dla Państwa rzetelne wsparcie na co dzień, dlatego zapewniamy szybką komunikację z prowadzącym sprawę prawnikiem oraz terminowe realizowanie powierzonych zadań.`,
+    author: `Wojciech Nowaczyk`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,13 +19,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Kancelaria Radcy Prawnego Joanna Kopania`,
+        short_name: `Kancelaria Kopania`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `white`,
+        theme_color: `#86592d`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-styled-components`,

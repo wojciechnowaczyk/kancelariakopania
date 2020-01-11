@@ -20,9 +20,13 @@ class menu extends React.Component{
     }))
   }
 
+  closeSubMenu = () => {
+    this.setState({showSubMenu: false});
+  }
+
   scroll = (id) => {
     scrollTo(id);
-    //this.props.showHide(id.charAt(id.length-1));
+    this.props.showHide(id.charAt(id.length-1));
   }
   render(){
   return(
@@ -41,7 +45,7 @@ class menu extends React.Component{
     <RigthBox>
       <MenuList>
         <Line>
-          <LinkButton onClick={()=> scrollTo('#content')}> O kancelarii </LinkButton>
+          <LinkButton onClick={()=> scrollTo('#content')} onMouseEnter={()=>this.closeSubMenu()}> O kancelarii </LinkButton>
         </Line>
         <Line>
           <LinkButton onClick={()=> scrollTo('#services')} onMouseEnter={()=>this.displaySubMenu()}> Usługi </LinkButton>
@@ -62,13 +66,13 @@ class menu extends React.Component{
           }
         </Line>
         <Line>
-          <LinkButton onClick={()=> scrollTo('#horseback')}> Prawo dla miłośników koni i jeździectwa </LinkButton>
+          <LinkButton onClick={()=> scrollTo('#horseback')} onMouseEnter={()=>this.closeSubMenu()}> Prawo dla miłośników koni i jeździectwa </LinkButton>
         </Line>
         <Line>
-          <LinkButton onClick={()=> scrollTo('#costs')}> Wynagrodzenie </LinkButton>
+          <LinkButton onClick={()=> scrollTo('#costs')} onMouseEnter={()=>this.closeSubMenu()}> Wynagrodzenie </LinkButton>
         </Line>
         <Line>
-          <LinkButton onClick={()=> scrollTo('#contact')}> Kontakt </LinkButton>
+          <LinkButton onClick={()=> scrollTo('#contact')} onMouseEnter={()=>this.closeSubMenu()}> Kontakt </LinkButton>
         </Line>
       </MenuList>
     </RigthBox>

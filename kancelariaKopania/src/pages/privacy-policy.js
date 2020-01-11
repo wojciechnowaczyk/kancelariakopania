@@ -7,10 +7,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PropTypes from "prop-types"
 
-import Menu from "../components/menu"
+import SecondMenu from "../components/secondMenu"
 import Footer from "../components/footer"
 
-import agreement from "../images/agreement1.jpg"
+import agreement from "../images/agreement.jpg"
 import regulations from "../data/privacyPolicy.json"
 
 class PrivacyPolicy extends React.Component {
@@ -22,6 +22,7 @@ class PrivacyPolicy extends React.Component {
     return(
       <>
         <SEO title="Polityka Prywatności" />
+        <SecondMenu />
         <Header>
           <HeaderOpacity>
             <HeaderTitle>
@@ -29,7 +30,6 @@ class PrivacyPolicy extends React.Component {
             </HeaderTitle>
           </HeaderOpacity>
         </Header>
-        <Menu />
         <MainBody>
           {regulations.data.map((el, i) =>
             <div key={i}>
@@ -54,8 +54,8 @@ const Header = styled.div`
 `
 
 const HeaderOpacity = styled.div`
-  width: 70%;
-  height: 50%;
+  width: 100%;
+  height: 75vh;
   background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;

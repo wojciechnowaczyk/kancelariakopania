@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import scrollTo from 'gatsby-plugin-smoothscroll'
+import CookieConsent from "react-cookie-consent"
 import Img from "gatsby-image"
 
 import Layout from "../components/layout"
@@ -47,6 +48,14 @@ class IndexPage extends React.Component {
     return(
       <>
         <SEO title="O Kancelarii" />
+        <CookieConsent
+          buttonText="Rozumiem"
+          cookieName="KopaniaCookie"
+          style={Cookie}
+          buttonStyle={CookieButton}
+        >
+          Ta strona korzysta z ciasteczek aby świadczyć usługi na najwyższym poziomie. Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie. Szczegółowe informacje w <Link style={CookiePrivacy} to='/privacy-policy'>Polityce Prywatności. </Link>
+        </CookieConsent>
         <RWDMenu showHide = {this.showHide.bind(this)}/>
         <Menu showHide = {this.showHide.bind(this)}/>
         <MainHeader>
@@ -592,6 +601,33 @@ const LinkButton = styled.a`
     border-bottom: 2px solid #48689A;
   }
 `
+
+const Cookie = {
+  border: '2px solid rgb(134, 89, 45)',
+  height: '100px;',
+  backgroundColor: 'white',
+  color: 'black',
+  fontFamily: 'Lato',
+  fontSize: '15px',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
+  textAlign: 'justify',
+}
+
+const CookiePrivacy = {
+  border: '1ps solid transparent',
+  cursor: 'pointer',
+  color: 'rgb(134, 89, 45)',
+}
+
+const CookieButton = {
+  cursor: 'pointer',
+  color: 'white',
+  backgroundColor: '#48689A',
+  border: 'none',
+}
 
 
 export default IndexPage

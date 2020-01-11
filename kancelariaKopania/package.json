@@ -22,6 +22,8 @@
     "gatsby-transformer-sharp": "^2.3.3",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
+    "react-cookie": "^4.0.3",
+    "react-cookie-consent": "^3.0.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
     "smooth-scroll": "^16.1.0",

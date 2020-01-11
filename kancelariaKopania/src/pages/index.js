@@ -317,7 +317,7 @@ class IndexPage extends React.Component {
           {this.state.showCosts[3] === true &&
           <AnswerBox onClick={()=>this.showHideCosts(3)}>
             <p><b>Stała wysokość okresowego wynagrodzenia za z góry określoną liczbę godzin w danym okresie rozliczeniowym.</b> Model stosowany najczęściej przez podmioty, u których zapotrzebowania na pomoc prawną występuje w bieżącej działalności. </p>
-            <p><b>Kancelaria w swojej ofercie posiada abonamenty miesięcznie już od 200 zł netto</b>, które są idealne dla niewielkich przedsiębiorców, którzy w ten sposób mogą zapewnić sobie stałą obsługę prawną, za stosunkowo niewielki pieniądze.</p>
+            <p><b>Kancelaria w swojej ofercie posiada abonamenty miesięcznie już od 200 zł netto</b>, które są idealne dla niewielkich przedsiębiorców, którzy w ten sposób mogą zapewnić sobie stałą obsługę prawną, za stosunkowo niewielkie pieniądze.</p>
           </AnswerBox>
           }
 
@@ -359,8 +359,10 @@ class IndexPage extends React.Component {
           Kancelaria Radcy Prawnego Joanna Kopania
           </ContactInfo>
           <ContactInfo>
+          <b>Biuro:<br />
           ul. Platynowa 28 <br />
-          62-052 Komorniki Poznań
+          62-052 Komorniki Poznań</b><br />
+          (Adres do korespondencji: ul. Naramowicka 217d/44, 61-611 Poznań)
           </ContactInfo>
           <ContactInfo>
           Telefon: 501-498-704 <br />

@@ -16,8 +16,10 @@ const Footer = () => {
               Kancelaria Radcy Prawnego Joanna Kopania
             </Desc>
             <Desc>
+              <b>Biuro <br />
               ul. Platynowa 28 <br />
-              62-052 Komorniki Poznań
+              62-052 Komorniki Poznań </b><br />
+              (Adres do korespondencji: ul. Naramowicka 217d/44, 61-611 Poznań)
             </Desc>
             <Desc>
               Telefon: 501-498-704 <br />

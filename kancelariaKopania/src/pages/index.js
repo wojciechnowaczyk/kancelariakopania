@@ -57,7 +57,7 @@ class IndexPage extends React.Component {
           Ta strona korzysta z ciasteczek aby świadczyć usługi na najwyższym poziomie. Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie. Szczegółowe informacje w <Link style={CookiePrivacy} to='/privacy-policy'>Polityce Prywatności. </Link>
         </CookieConsent>
         <RWDMenu showHide = {this.showHide.bind(this)}/>
-        <Menu showHide = {this.showHide.bind(this)}/>
+        <Menu showHide = {this.showHide.bind(this)} />
         <MainHeader>
           <HeaderOpacity1>
             <HeaderTop>
@@ -362,7 +362,6 @@ class IndexPage extends React.Component {
             </HeaderTitle>
           </HeaderOpacity>
         </Header>
-        <Menu />
         <MainBody>
           <ContactInfo>
           Kancelaria Radcy Prawnego Joanna Kopania
@@ -604,7 +603,7 @@ const LinkButton = styled.a`
 
 const Cookie = {
   border: '2px solid rgb(134, 89, 45)',
-  height: '100px;',
+  height: '100px',
   backgroundColor: 'white',
   color: 'black',
   fontFamily: 'Lato',

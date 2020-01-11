@@ -2,16 +2,21 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import scrollTo from 'gatsby-plugin-smoothscroll'
+import smoothscroll from 'smoothscroll-polyfill'
+import PropTypes from 'prop-types'
 
 import logo from "../images/logo.png"
 
-class menu extends React.Component{
+class Menu extends React.Component{
   constructor(props) {
     super(props);
-    console.log(this.props);
-    this.state = {
+    this.state= {
       showSubMenu: false,
     }
+  }
+
+componentDidMount(){
+    console.log(this.props);
   }
 
   displaySubMenu = () => {
@@ -26,7 +31,7 @@ class menu extends React.Component{
 
   scroll = (id) => {
     scrollTo(id);
-    this.props.showHide(id.charAt(id.length-1));
+    this.props.showHide(id.match(/\d+/g).map(Number));
   }
   render(){
   return(
@@ -88,11 +93,11 @@ const Box = styled.div`
   justify-content: center;
   flex-direction: row;
   position: fixed;
-  top: 0;
-  left: 0;
   height: 100px;
   z-index: 1001;
   background-color: white;
+  top: 0;
+  left: 0;
 
   @media screen and (max-width: 999px){
     display: none;
@@ -229,4 +234,4 @@ const SubMenu = styled.div`
   border: 2px solid rgb(134, 89, 45);
 `
 
-export default menu
+export default Menu

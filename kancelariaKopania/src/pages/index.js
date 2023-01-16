@@ -70,17 +70,6 @@ class IndexPage extends React.Component {
           <HeaderOpacity1>
             <HeaderTop>
               <Logotype src={logo} alt="logotype"/>
-              <TitleBox>
-                <MainHeaderTitle>
-                  Kancelaria
-                </MainHeaderTitle>
-                <MainHeaderTitle>
-                  Radcy Prawnego
-                </MainHeaderTitle>
-                <MainHeaderTitle>
-                  Joanna Kopania
-                </MainHeaderTitle>
-              </TitleBox>
             </HeaderTop>
           </HeaderOpacity1>
         </MainHeader>
@@ -310,7 +299,7 @@ class IndexPage extends React.Component {
           Kancelaria stosuje następujące warianty wynagrodzenia:</p>
           <QuestionBar onClick={()=>this.showHideCosts(0)}>1. Wynagrodzenie za ustną poradę prawną</QuestionBar>
           {this.state.showCosts[0] === true &&
-          <AnswerBox onClick={()=>this.showHideCosts(0)}><p><b>Stała opłata w wysokości 200 zł.</b></p>
+          <AnswerBox onClick={()=>this.showHideCosts(0)}><p><b>Stała opłata w wysokości 300 zł + VAT.</b></p>
 
             <p>W przypadku zlecenia prowadzenia sprawy, koszt porady prawej zalicza się na poczet
             wynagrodzenia za prowadzenie sprawy.</p>
@@ -326,7 +315,7 @@ class IndexPage extends React.Component {
 
           <QuestionBar onClick={()=>this.showHideCosts(2)}>3. Wynagrodzenie ryczałtowe</QuestionBar>
           {this.state.showCosts[2] === true &&
-          <AnswerBox onClick={()=>this.showHideCosts(2)}><p><b>Stawka wynagrodzenia określona jest na początku współpracy; pozostaje niezmienna i niezależna od czasu, jaki został poświęcony na dane zlecenie. </b>Najczęściej stosowane w przypadku przygotowania pism w postępowaniu sądowym <b>(od 300 zł)</b>, umów, w tym ich opiniowaniu (w zależności od stopnia skomplikowania i wielkości umowy – <b>od 300 zł</b>), opinii prawnych <b>(od 500 zł</b>), rejestracji spółek w KRS (<b>od 1.000 zł</b>).</p>
+          <AnswerBox onClick={()=>this.showHideCosts(2)}><p><b>Stawka wynagrodzenia określona jest na początku współpracy; pozostaje niezmienna i niezależna od czasu, jaki został poświęcony na dane zlecenie. </b>Najczęściej stosowane w przypadku przygotowania pism w postępowaniu sądowym <b>(od 400 zł + VAT)</b>, umów, w tym ich opiniowaniu (w zależności od stopnia skomplikowania i wielkości umowy – <b>od 400 zł + VAT</b>), opinii prawnych <b>(od 1000 zł + VAT</b>), rejestracji spółek w KRS (<b>od 1200 zł + VAT</b>).</p>
           </AnswerBox>
           }
 
@@ -334,7 +323,7 @@ class IndexPage extends React.Component {
           {this.state.showCosts[3] === true &&
           <AnswerBox onClick={()=>this.showHideCosts(3)}>
             <p><b>Stała wysokość okresowego wynagrodzenia za z góry określoną liczbę godzin w danym okresie rozliczeniowym.</b> Model stosowany najczęściej przez podmioty, u których zapotrzebowania na pomoc prawną występuje w bieżącej działalności. </p>
-            <p><b>Kancelaria w swojej ofercie posiada abonamenty miesięcznie już od 200 zł netto</b>, które są idealne dla niewielkich przedsiębiorców, którzy w ten sposób mogą zapewnić sobie stałą obsługę prawną, za stosunkowo niewielkie pieniądze.</p>
+            <p><b>Kancelaria w swojej ofercie posiada abonamenty miesięcznie już od 500 zł netto</b>, które są idealne dla niewielkich przedsiębiorców, którzy w ten sposób mogą zapewnić sobie stałą obsługę prawną, za stosunkowo niewielkie pieniądze.</p>
           </AnswerBox>
           }
 
@@ -443,8 +432,7 @@ const ServiceBody = styled.div`
 `
 
 const Logotype = styled.img`
-  width: 200px;
-  height: 200px;
+  width: 700px;
 
   @media screen and (max-width: 620px){
     margin-bottom: 30px;

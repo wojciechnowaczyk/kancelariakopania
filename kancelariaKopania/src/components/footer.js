@@ -23,7 +23,7 @@ const Footer = () => {
             </Desc>
             <Desc>
               Telefon: 501-498-704 <br />
-              email: kancelaria@radcakopania.pl
+              email: joannakopania@kancelariakopania.pl
             </Desc>
             <Link to='/privacy-policy' style={LinkStyles}> Polityka prywatności </Link>
           </ColDesc>

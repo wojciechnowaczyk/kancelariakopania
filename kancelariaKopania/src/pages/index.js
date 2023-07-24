@@ -371,7 +371,7 @@ class IndexPage extends React.Component {
           </ContactInfo>
           <ContactInfo>
           Telefon: 501-498-704 <br />
-          email: kancelaria@radcakopania.pl
+          email: joannakopania@kancelariakopania.pl
           </ContactInfo>
           <ContactInfo>
           Godziny otwarcia: <br />
